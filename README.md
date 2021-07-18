@@ -1,1 +1,1 @@
-# colourpsych.github.io
+# colourpsych
