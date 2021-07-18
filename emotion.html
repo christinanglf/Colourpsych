@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <title>Color Psychology</title>
+
+    <meta charset="utf-8">
+    <style media="screen">
+      body{
+        margin:50px;
+        font-size:18px;
+      }
+      .ball {
+        position: absolute;
+        border-radius: 100%;
+        opacity: 0.3;
+      }
+
+      .nav{
+        justify-content:center;
+        margin-bottom:30px;
+      }
+
+      .nav-pills li a{
+        color:black;
+        transition: color .3s;
+      }
+
+      /*Active link*/
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show>.nav-link{
+        background-color:#BABCBE;
+        color:white;
+      }
+
+      /*hover*/
+
+      .nav li a:hover {
+          animation: 3s multicolor;
+          -webkit-animation: 3s multicolor;
+      }
+      @keyframes multicolor {
+
+          0%{
+            color: #000;
+          }
+          10% {
+              color: #FF6058;
+          }
+          25% {
+              color: #475D95;
+          }
+          50% {
+              color: #3EAF3F;
+          }
+
+          75% {
+              color:#FF8F50
+          }
+          100% {
+              color: #FFC130;
+          }
+      }
+      @-webkit-keyframes multicolor {
+
+        0%{
+          color: #000;
+        }
+        10% {
+            color: #FF6058;
+        }
+        25% {
+            color: #475D95;
+        }
+        50% {
+            color: #3EAF3F;
+        }
+
+        75% {
+            color:#FF8F50
+        }
+        100% {
+            color: #FFC130;
+        }
+      }
+
+      .header{
+        font-family:"poiret one", cursive;
+        padding-top:50px;
+        padding-bottom:60px;
+        padding-left:50px;
+        padding-right:50px;
+        text-align:center;
+      }
+
+      h1{
+        font-size:100px;
+        background: #FF6058;
+        background: -webkit-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: -moz-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .content{
+        padding-left: 15%;
+        padding-right: 15%;
+        line-height:150%;
+        letter-spacing:1.2px;
+        word-spacing:5px;
+        padding-top:30px;
+        text-align:justify;
+      }
+
+      .bluelight{
+        color:blue;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!--Background bouncing balls-->
+
+    <script type="text/javascript">
+      // Some random colors
+    const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+    const numBalls = 50;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+      let ball = document.createElement("div");
+      ball.classList.add("ball");
+      ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+      ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+      ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+      ball.style.transform = `scale(${Math.random()})`;
+      ball.style.width = `${Math.random()}em`;
+      ball.style.height = ball.style.width;
+
+      balls.push(ball);
+      document.body.append(ball);
+    }
+
+    // Keyframes
+    balls.forEach((el, i, ra) => {
+      let to = {
+        x: Math.random() * (i % 2 === 0 ? -11 : 11),
+        y: Math.random() * 12
+      };
+
+      let anim = el.animate(
+        [
+          { transform: "translate(0, 0)" },
+          { transform: `translate(${to.x}rem, ${to.y}rem)` }
+        ],
+        {
+          duration: (Math.random() + 1) * 2000, // random duration
+          direction: "alternate",
+          fill: "both",
+          iterations: Infinity,
+          easing: "ease-in-out"
+        }
+      );
+    });
+    </script> <!--endballs-->
+
+    <!--Header-->
+    <div class="header">
+    <h1><a href="file:///C:/Users/chris/github/Colourpsych/index.html">Color Psychology</a></h1>
+    </div>
+
+    <!--Navigation-->
+    <div class="nav">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/basicprinciples.html">Basic Principles</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/perception.html">Perception</a></li>
+        <li class="nav-item">
+        <a class="nav-link active" href="file:///C:/Users/chris/github/Colourpsych/emotion.html">Emotion</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/applications.html">Practical Applications</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/diffs.html">Individual Differences</a></li>
+      </ul>
+    </div>
+
+<div class="content">
+
+    <h2>Emotion</h2>
+    <p>How people respond to different color stimuli varies from person to person. In a U.S. study, blue is the top choice at 35%, followed by green (16%), purple (10%) and red (9%). Blue and green may be due to a preference for certain habitats that were beneficial in the ancestral environment as explained in evolutionary aesthetics. Orange, yellow, and brown are the least popular colors, respectively.<br>
+
+    Color preference may also depend on ambient temperature. People who are cold often select warm colors such as red or yellow, while people who are hot favor cool colors like blue and green. Introverted individuals are also found to be more attracted to cool colors, while extroverts prefer warmer colors.<br>
+
+    Gender has also shown to influence how colors are received, with some research suggesting women and men respectively prefer "warm" and "cool" colors. Black, white, and gray, as tones or shades, were shown to be received more positively by males than females.<br>
+
+    Psychologist Andrew J. Elliot tested to see if the color of a person's clothing could make them appear more sexually appealing. He found heterosexual men and women dressed in red were significantly more likely to attract romantic attention than women dressed in any other color. The color did not affect heterosexual women's assessment of other women's attractiveness. Other studies have shown men dressed in red appeal to heterosexual women.<br>
+
+    Contrary to the adult fondness for blue, in children yellow is the most favored color, perhaps owing to its associations with happiness. However, children like colors they find to be pleasant and comforting are changeable, while adult color preference is usually easily influenced.<br>
+
+    Cultural background has been shown to have a strong influence on color associations. Studies have shown people from the same region, regardless of ethnicity, will have the same color preferences. Common associations connecting colors to a particular emotion may also differ cross-culturally. For instance, one study examined color relationships with emotion with participants in Germany, Mexico, Poland, Russia, and the United States; finding that red was associated with anger and viewed as strong and active. However, only Poles related purple with both anger and jealousy while Germans linked jealousy with yellow. This highlights how the influence of different cultures can potentially change perceptions of color and its relationship to emotion.</p>
+
+    <h2>In real life</h2>
+      <p>Blue light causes people to feel relaxed, which has led countries to add <strong class="bluelight">blue street lights</strong> in order to decrease suicide rates. In 2000, the city of Glasgow installed blue street lighting in certain neighborhoods and subsequently reported the anecdotal finding of reduced crime in these areas. A railroad company in Japan installed blue lighting on its stations in October 2009 in an effort to reduce the number of suicide attempts,[13] although the effect of this technique has been questioned.</p>
+    </div>
+
+  </body>
+  </html>

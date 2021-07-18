@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <title>Color Psychology</title>
+
+    <meta charset="utf-8">
+    <style media="screen">
+      body{
+        margin:50px;
+        font-size:18px;
+      }
+      .ball {
+        position: absolute;
+        border-radius: 100%;
+        opacity: 0.3;
+      }
+
+      .nav{
+        justify-content:center;
+        margin-bottom:30px;
+      }
+
+      .nav-pills li a{
+        color:black;
+        transition: color .3s;
+      }
+
+      /*Active link*/
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show>.nav-link{
+        background-color:#BABCBE;
+        color:white;
+      }
+
+      /*hover*/
+
+      .nav li a:hover {
+          animation: 3s multicolor;
+          -webkit-animation: 3s multicolor;
+      }
+      @keyframes multicolor {
+
+          0%{
+            color: #000;
+          }
+          10% {
+              color: #FF6058;
+          }
+          25% {
+              color: #475D95;
+          }
+          50% {
+              color: #3EAF3F;
+          }
+
+          75% {
+              color:#FF8F50
+          }
+          100% {
+              color: #FFC130;
+          }
+      }
+      @-webkit-keyframes multicolor {
+
+        0%{
+          color: #000;
+        }
+        10% {
+            color: #FF6058;
+        }
+        25% {
+            color: #475D95;
+        }
+        50% {
+            color: #3EAF3F;
+        }
+
+        75% {
+            color:#FF8F50
+        }
+        100% {
+            color: #FFC130;
+        }
+      }
+
+      .header{
+        font-family:"poiret one", cursive;
+        padding-top:50px;
+        padding-bottom:60px;
+        padding-left:50px;
+        padding-right:50px;
+        text-align:center;
+      }
+
+
+      h1{
+        font-size:100px;
+        background: #FF6058;
+        background: -webkit-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: -moz-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .content{
+        padding-left: 15%;
+        padding-right: 15%;
+        line-height:150%;
+        letter-spacing:1.2px;
+        word-spacing:5px;
+        padding-top:30px;
+        text-align:justify;
+      }
+
+      .food{
+        color:#FF8F50;
+      }
+
+      .placebo{
+        color:#FF6058;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!--Background bouncing balls-->
+
+    <script type="text/javascript">
+      // Some random colors
+    const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+    const numBalls = 50;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+      let ball = document.createElement("div");
+      ball.classList.add("ball");
+      ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+      ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+      ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+      ball.style.transform = `scale(${Math.random()})`;
+      ball.style.width = `${Math.random()}em`;
+      ball.style.height = ball.style.width;
+
+      balls.push(ball);
+      document.body.append(ball);
+    }
+
+    // Keyframes
+    balls.forEach((el, i, ra) => {
+      let to = {
+        x: Math.random() * (i % 2 === 0 ? -11 : 11),
+        y: Math.random() * 12
+      };
+
+      let anim = el.animate(
+        [
+          { transform: "translate(0, 0)" },
+          { transform: `translate(${to.x}rem, ${to.y}rem)` }
+        ],
+        {
+          duration: (Math.random() + 1) * 2000, // random duration
+          direction: "alternate",
+          fill: "both",
+          iterations: Infinity,
+          easing: "ease-in-out"
+        }
+      );
+    });
+    </script> <!--endballs-->
+
+    <!--Header-->
+    <div class="header">
+    <h1><a href="file:///C:/Users/chris/github/Colourpsych/index.html">Color Psychology</a></h1>
+    </div>
+
+    <!--Navigation-->
+    <div class="nav">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/basicprinciples.html">Basic Principles</a></li>
+        <li class="nav-item">
+        <a class="nav-link active" href="file:///C:/Users/chris/github/Colourpsych/perception.html">Perception</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/emotion.html">Emotion</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/applications.html">Practical Applications</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/diffs.html">Individual Differences</a></li>
+      </ul>
+    </div>
+
+  <div class="content">
+
+    <h2>Perception</h2>
+      <p>Light and color influence how people see their surroundings. Different types of light sources affect interior or external objects by visually changing their surface colors. Specific hues observed under natural sunlight may vary when seen under the light from an incandescent (tungsten) light-bulb: lighter colors may appear to be more orange or "brownish" and darker colors may appear even darker. Light and the color of an object can affect how one perceives its positioning. If light or shadow, or the color of the object, masks an object's true contour (outline of a figure) it can appear to be shaped differently from reality. Objects under a uniform light-source will promote better impression of three-dimensional shape. The color of an object may affect whether or not it seems to be in motion. In particular, the trajectories of objects under a light source whose intensity varies with space are more difficult to determine than identical objects under a uniform light source. This could possibly be interpreted as interference between motion and color perception, both of which are more difficult under variable lighting. <br> <br>
+
+      Carl Jung is most prominently associated with the pioneering stages of color psychology. Jung was most interested in colors' properties and meanings, as well as in art's potential as a tool for psychotherapy. His studies in and writings on color symbolism cover a broad range of topics, from mandalas to the works of Picasso to the near-universal sovereignty of the color gold, the lattermost of which, according to Charles A. Riley II, "expresses ... the apex of spirituality, and intuition". In pursuing his studies of color usage and effects across cultures and time periods, as well as in examining his patients' self-created mandalas, Jung attempted to unlock and develop a language, or code, the ciphers of which would be colors. He looked to alchemy to further his understanding of the secret language of color, finding the key to his research in alchemical transmutation. His work has historically informed the modern field of color psychology.</p><br>
+
+    <h3>In real life</h3>
+
+        <p>Color has a large impact on <strong class="food">food</strong>. Color affects how people perceive the edibility and flavor of foods and drinks. Not only the color of the food itself but also that of everything in the eater's field of vision can affect this. For example, in food stores, bread is normally sold in packaging decorated or tinted with golden or brown tones to promote the idea of home baked and oven freshness. People can mistake a cherry flavored drink for being lime or lemon flavored if that drink was a green color. Additionally, a flavor can be intensified by a color. People can rate a brown M&M as more chocolate flavored than a green M&M based on color.</p><br>
+
+        <p>The color of <strong class="placebo">placebo</strong> pills is reported to be a factor in their effectiveness, with "hot-colored" pills working better as stimulants and "cool-colored" pills working better as depressants. This relationship is believed to be a consequence of the patient's expectations and not a direct effect of the color itself. Consequently, these effects appear to be culture-dependent.</p>
+    </div>
+  </body>
+  </html>

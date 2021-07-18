@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <title>Color Psychology</title>
+
+    <meta charset="utf-8">
+    <style media="screen">
+      body{
+        margin:50px;
+        font-size:18px;
+      }
+      .ball {
+        position: absolute;
+        border-radius: 100%;
+        opacity: 0.3;
+      }
+
+      .nav{
+        justify-content:center;
+        margin-bottom:30px;
+      }
+
+      .nav-pills li a{
+        color:black;
+        transition: color .3s;
+      }
+
+      /*Active link*/
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show>.nav-link{
+        background-color:#BABCBE;
+        color:white;
+      }
+
+      /*hover*/
+
+      .nav li a:hover {
+          animation: 3s multicolor;
+          -webkit-animation: 3s multicolor;
+      }
+      @keyframes multicolor {
+
+          0%{
+            color: #000;
+          }
+          10% {
+              color: #FF6058;
+          }
+          25% {
+              color: #475D95;
+          }
+          50% {
+              color: #3EAF3F;
+          }
+
+          75% {
+              color:#FF8F50
+          }
+          100% {
+              color: #FFC130;
+          }
+      }
+      @-webkit-keyframes multicolor {
+
+        0%{
+          color: #000;
+        }
+        10% {
+            color: #FF6058;
+        }
+        25% {
+            color: #475D95;
+        }
+        50% {
+            color: #3EAF3F;
+        }
+
+        75% {
+            color:#FF8F50
+        }
+        100% {
+            color: #FFC130;
+        }
+      }
+
+      .header{
+        font-family:"poiret one", cursive;
+        padding-top:50px;
+        padding-bottom:60px;
+        padding-left:50px;
+        padding-right:50px;
+        text-align:center;
+      }
+
+      h1{
+        font-size:100px;
+        background: #FF6058;
+        background: -webkit-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: -moz-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        background: radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 25%, #3EAF3F 50%, #FF8F50 75%, #FFC130 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .content{
+        padding-left: 15%;
+        padding-right: 15%;
+        line-height:150%;
+        letter-spacing:1.2px;
+        word-spacing:5px;
+        padding-top:30px;
+        text-align:justify;
+      }
+
+      table{
+      border-collapse:collapse;
+      }
+
+      td,th{
+        border:1px solid #000000;
+        text-align:center;
+        padding:9px;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <!--Background bouncing balls-->
+
+    <script type="text/javascript">
+      // Some random colors
+    const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+    const numBalls = 50;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+      let ball = document.createElement("div");
+      ball.classList.add("ball");
+      ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+      ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+      ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+      ball.style.transform = `scale(${Math.random()})`;
+      ball.style.width = `${Math.random()}em`;
+      ball.style.height = ball.style.width;
+
+      balls.push(ball);
+      document.body.append(ball);
+    }
+
+    // Keyframes
+    balls.forEach((el, i, ra) => {
+      let to = {
+        x: Math.random() * (i % 2 === 0 ? -11 : 11),
+        y: Math.random() * 12
+      };
+
+      let anim = el.animate(
+        [
+          { transform: "translate(0, 0)" },
+          { transform: `translate(${to.x}rem, ${to.y}rem)` }
+        ],
+        {
+          duration: (Math.random() + 1) * 2000, // random duration
+          direction: "alternate",
+          fill: "both",
+          iterations: Infinity,
+          easing: "ease-in-out"
+        }
+      );
+    });
+    </script> <!--endballs-->
+
+    <!--Header-->
+    <div class="header">
+    <h1><a href="file:///C:/Users/chris/github/Colourpsych/index.html">Color Psychology</a></h1>
+    </div>
+
+    <!--Navigation-->
+    <div class="nav">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/basicprinciples.html">Basic Principles</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/perception.html">Perception</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/emotion.html">Emotion</a></li>
+        <li class="nav-item">
+        <a class="nav-link active" href="file:///C:/Users/chris/github/Colourpsych/applications.html">Practical Applications</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/chris/github/Colourpsych/diffs.html">Individual Differences</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+
+    <h2>Practical Applications</h2>
+
+      <h3>Cartography</h3>
+        <p>In map design, additional color meanings are commonly employed to create intuitive map symbols, due to the natural colors of common geographic features. These correlations are commonly stylized and conventionalized, so that the color with the most intuitive meaning is often the nearest prototypical named color rather than that most similar to the real-world color (e.g., in very rare locations is water as deep and pure a blue as is commonly used in maps). Common (but by no means authoritative or exhaustive) examples include:</p>
+
+        <ul>
+          <li>Green: vegetation</li>
+          <li>Blue: water (water bodies, precipitation), cold</li>
+          <li>Yellow: dryness</li>
+          <li>Brown: soil</li>
+          <li>Red: heat, wildfire</li>
+          <li>Purple: unnatural (contrasting with natural connotations of green, yellow, blue)</li>
+          <li>Gray/Black: human structures (roads, buildings)</li>
+        </ul>
+
+        <p>Other colors can have intuitive meaning due to their role in Gestalt psychology and other cognitive aspects of the map-reading process. For example, shades that contrast most with the background (i.e., dark on a white page, light on a dark screen) are naturally perceived as "more" (higher values of quantitative properties, more important in the Visual hierarchy) than shades with less contrast.</p>
+
+      <h3>Medicine</h3>
+        <p>At the turn of the 20th century, white was widely used in hospitals. In 1914, a surgeon in a San Francisco hospital, Harry Sherman, adopted green, "the complementary colour to hemaglobin" to avoid dazzle. This was adopted by a number of other American hospitals in the following decades. At around the same time, architect William Ludlow began to advocate pale pastel blues and greens in hospitals for therapeutic purposes and advising that "white is negative". In 1930, Dr. Charles Ireland of Guy's Hospital in London wrote Colour and Cancer, a book advocating the use of concentrated doses of colored light for treating cancer. The practice of using color in hospitals became widespread in the 1930s, particularly promoted by Faber Birren, who established himself as an "industrial color consultant" in 1934 and advised that an environment of soft colors, especially green, would be soothing for patients.</p>
+
+      <h3>Games</h3>
+        <p>Since color is such an important element in how people interpret their environment, color psychology can enhance the feeling of immersion in people that play video games. By using color psychology to cause immersion in players, players can have less errors playing video games and feel more a part of the game they were playing in comparison to a game that did not have color psychology immersion.</p>
+
+
+    <h3>Marketing &amp; Branding</h3>
+
+      <p>Since color is an important factor in the visual appearance of products as well as in brand recognition, color psychology has become important to marketing. Recent work in marketing has shown that color can be used to communicate brand personality.<br>
+
+      Marketers must be aware of the application of color in different media (e.g. print vs. web), as well as the varying meanings and emotions that a particular audience can assign to color. Even though there are attempts to classify consumer response to different colors, everyone perceives color differently. The physiological and emotional effect of color in each person is influenced by several factors such as past experiences, culture, religion, natural environment, gender, race, and nationality. When making color decisions, it is important to determine the target audience in order to convey the right message. Color decisions can influence both direct messages and secondary brand values and attributes in any communication. Color should be carefully selected to align with the key message and emotions being conveyed in a piece.<br>
+
+      Research on the effects of color on product preference and marketing shows that product color could affect consumer preference and hence purchasing culture. This is mostly due to associative learning. Most results show that it is not a specific color that attracts all audiences, but that certain colors are deemed appropriate for certain products.</p>
+
+    <h3>Brand meaning</h3>
+    <p>Color is a very influential source of information when people are making a purchasing decision. Customers generally make an initial judgment on a product within 90 seconds of interaction with that product and about 62%-90% of that judgment is based on color. People often see the logo of a brand or company as a representation of that company. Without prior experience to a logo, we begin to associate a brand with certain characteristics based on the primary logo color.<br>
+
+    Color mapping provides a means of identifying potential logo colors for new brands and ensuring brand differentiation within a visually cluttered marketplace.<br>
+
+    A study on logo color asked participants to rate how appropriate the logo color was for fictional companies based on the products each company produced. Participants were presented with fictional products in eight different colors and had to rate the appropriateness of the color for each product. This study showed a pattern of logo color appropriateness based on product function. If the product was considered functional, fulfills a need or solves a problem, then a functional color was seen as most appropriate. If the product was seen as sensory-social, conveys attitudes, status, or social approval, then sensory-social colors were seen as more appropriate. Companies should decide what types of products to produce and then choose a logo color that is connotative with their products' functions.<br>
+
+    Company logos can portray meaning just through the use of color. Color affects people's perceptions of a new or unknown company. Some companies such as Victoria's Secret and H&R Block used color to change their corporate image and create a new brand personality for a specific target audience. Research done on the relationship between logo color and five personality traits had participants rate a computer-made logo in different colors on scales relating to the dimensions of brand personality. Relationships were found between color and sincerity, excitement, competence, sophistication, and ruggedness. A follow up study tested the effects of perceived brand personality and purchasing intentions. Participants were presented with a product and a summary of the preferred brand personality and had to rate the likelihood of purchasing a product based on packaging color. Purchasing intent was greater if the perceived personality matched the marketed product or service. In turn color affects perceived brand personality and brand personality affects purchasing intent.<br>
+
+    Although color can be useful in marketing, its value and extent of use depends on how it is used and the audience it is used on. The use of color will have different effects on different people, therefore experimental findings cannot be taken as universally true.</p>
+
+    <h3>Specific color meaning</h3>
+
+    <p>Different colors are perceived to mean different things. For example, tones of red lead to feelings of arousal while blue tones are often associated with feelings of relaxation. Both of these emotions are pleasant, so therefore, the colors themselves can procure positive feelings in advertisements. The chart below gives perceived meanings of different colors in the United States.</p>
+
+    <p>Functional (F): fulfills a need or solves a problem.</p>
+
+    <p>Sensory-Social (S): conveys attitudes, status, or social approval.</p>
+
+    <center>
+    <table>
+      <tr>
+        <th>Red</th>
+        <th>Yellow</th>
+        <th>Green</th>
+        <th>Blue</th>
+        <th>Pink</th>
+        <th>Violet/Purple</th>
+        <th>Orange</th>
+        <th>Brown</th>
+        <th>Black</th>
+        <th>White</th>
+      </tr>
+      <tr>
+        <td>Lust (S)</td>
+        <td>Competence (S)</td>
+        <td>Good Taste (F)</td>
+        <td>Masculine (S)</td>
+        <td>Sophistication (S)</td>
+        <td>Authority (S)</td>
+        <td>Warmth (S)</td>
+        <td>Ruggedness (S)</td>
+        <td>Grief (S)</td>
+        <td>Happiness (S)</td>
+      </tr>
+      <tr>
+        <td>Power (S)</td>
+        <td>Happiness (S)</td>
+        <td>Envy (S)</td>
+        <td>Competence (S)</td>
+        <td>Sincerity (S)</td>
+        <td>Sophistication (S)</td>
+        <td>Excitement (S)</td>
+        <td></td>
+        <td>Sophistication (S)</td>
+        <td>Sincerity (S)</td>
+      </tr>
+      <tr>
+        <td>Excitement (S)</td>
+        <td>Inexpensive (F)</td>
+        <td>Eco-Friendly (F)</td>
+        <td>High quality (F)</td>
+        <td>Feminine (S)</td>
+        <td>Power (S)</td>
+        <td></td>
+        <td></td>
+        <td>Expensive (F)</td>
+        <td>Purity (S)</td>
+      </tr>
+      <tr>
+        <td>Love (S)</td>
+        <td>Low Quality (F)</td>
+        <td>Health (S)</td>
+        <td>Corporate (F)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Fear (S)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Speed (S)</td>
+        <td></td>
+        <td></td>
+        <td>Reliability (F)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Death (S)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Anger (S)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    </center><br>
+
+
+
+    <h3>Combining colors</h3>
+      <p>Although some companies use a single color to represent their brand, many other companies use a combination of colors in their logo, and can be perceived in different ways than those colors independently. When asked to rate color pair preference of preselected pairs, people generally prefer color pairs with similar hues when the two colors are both in the foreground; however, greater contrast between the figure and the background is preferred.<br>
+
+      In contrast to a strong preference for similar color combinations, some people like to accent with a highly contrasting color. In a study on color preference for Nike, Inc. sneakers, people generally combined colors near each other on the color wheel, such as blue and dark blue. However, a smaller segment preferred to have the Nike swoosh accentuated in a different, and contrasting, color. Most of the people also used a relatively small number of colors when designing their ideal athletic shoe. This finding has relevance for companies that produce multicolored merchandise, suggesting that to appeal to consumer preferences, companies should consider minimizing the number of colors visible and using similar hues in any one product.</p>
+
+    <h3>Color name</h3>
+      <p>Although different colors can be perceived in different ways, the names of those colors matters as well. These names are often called visual color descriptors. Many products and companies focus on producing a wide range of product colors to attract the largest population of consumers. For example, cosmetics brands produce a rainbow of colors for eye shadow and nail polish, to appeal to every type of person. Even companies such as Apple Inc. and Dell who make iPods and laptops do so with a certain amount of color personalization available to attract buyers. Moreover, color name, not only the actual color, can attract or repel buyers as well. When asked to rate color swatches and products with either generic color names (such as brown) or "fancy" color names (such as mocha), participants rated items with fancy names as significantly more likable than items with generic names. In fact, the same paint color swatch with two different names produced different rating levels, and the same effect was found when participants rated the pleasantness of towels given fancy or generic color names,[39] showing an overall pattern of preference for fancy color names over generic ones when describing exactly the same color.<br>
+
+      Furthermore, it would appear that in addition to fancy names being preferred for their aural appeal, they may actually contribute to the product they represent itself being liked more, and hence in this manner impact sales. A yellow jelly bean with an atypical color name such as razzmatazz is more likely to be selected than one with a more typical name such as lemon yellow. This could be due to greater interest in atypical names, as well as curiosity and willingness to "figure out" why that name was chosen. Purchasing intent patterns regarding custom sweatshirts from an online vendor also revealed a preference for atypical names. Participants were asked to imagine buying sweatshirts and were provided with a variety of color name options, some typical, some atypical. Color names that were atypical were selected more often than typical color names, again confirming a preference for atypical color names and for item descriptions using those names. Moreover, those who chose sweatshirts bearing atypical color names were described as more content with their purchase than those who selected similar items bearing typical color names.</p>
+
+    <h3>Attracting attention</h3>
+      <p>Color is used as a means to attract consumer attention to a product that then influences buying behavior. Consumers use color to identify for known brands or search for new alternatives. Variety seekers look for non-typical colors when selecting new brands. Attractive color packaging receives more consumer attention than unattractive color packaging, which can then influence buying behavior. A study that looked at visual color cues focused on predicted purchasing behavior for known and unknown brands. Participants were shown the same product in four different colors and brands. The results showed that people picked packages based on colors that attracted their voluntary and involuntary attention. Associations made with that color such as 'green fits menthol', also affected their decision. Based on these findings implications can be made on the best color choices for packages. New companies or new products could consider using dissimilar colors to attract attention to the brand, but off-brand companies could consider using similar colors to the leading brand to emphasize product similarity. If a company is changing the look of a product, but keeping the product the same, they consider keeping the same color scheme since people use color to identify and search for brands. This can be seen in Crayola crayons, where the logo has changed many times since 1934, but the basic package colors, gold and green, have been kept throughout. <br>
+
+      Attention is captured subconsciously before people can consciously attend to something. Research looking at electroencephalography (EEGs) while people made decisions on color preference found brain activation when a favorite color is present before the participants consciously focused on it. When looking at various colors on a screen people focus on their favorite color, or the color that stands out more, before they purposefully turn their attention to it. This implies that products can capture someone's attention based on color, before the person willingly looks at the product.<br>
+
+      In interactive design and behavioral design, color is used to develop visual hierarchies where colors are placed into saliency hierarchies that match other hierarchies. Examples include matching a color hierarchy to a navigational structure hierarchy, or matching a behavioral science hierarchy to the most salient colors in a visual hierarchy, to increase the odds that important behavior change principles are noticed by a target audience and processed by them.</p>
+
+    <h3>Store and display color</h3>
+      <p>Color is not only used in products to attract attention, but also in window displays and stores. When people are exposed to different colored walls and images of window displays and store interiors they tend to be drawn to some colors and not to others. Findings showed that people were physically drawn to warm colored displays; however, they rated cool colored displays as more favorable. This implies that warm colored store displays are more appropriate for spontaneous and unplanned purchases, whereas cool colored displays and store entrances may be a better fit for purchases where a lot of planning and customer deliberation occurs. This is especially relevant in shopping malls where patrons could easily walk into a store that attracts their attention without previous planning.<br>
+
+      Other research has confirmed that store color, and not just the product, influences buying behavior. When people are exposed to different store color scenarios and then surveyed on intended buying behavior, store color, among various other factors, seems important for purchasing intentions. Particularly blue, a cool color, was rated as more favorable and produced higher purchasing intentions than orange, a warm color. However, all negative effects to orange were neutralized when orange store color was paired with soft lighting. This shows that store color and lighting actually interact.<br>
+
+      Lighting color could have a strong effect on perceived experience in stores and other situation. For example, time seems to pass more slowly under red lights and time seems to pass quickly under blue light.[19] Casinos take full advantage of this phenomenon by using color to get people to spend more time and hence more money in their casino. However, a presumed influence of colored light (red vs. blue) on risk behavior could not be demonstrated.</p>
+
+    </div> <!--end content-->
+
+  </body>
+  </html>
