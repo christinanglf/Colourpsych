@@ -121,6 +121,10 @@ cite{
   margin-bottom:20px;
 }
 
+.cite{
+  text-decoration:none;
+}
+
 .content{
   padding-left: 15%;
   padding-right: 15%;
@@ -159,4 +163,49 @@ td,th{
 
 .placebo{
   color:#FF6058;
+}
+
+.bluelightsimg{
+  width:50%;
+  height:auto;
+}
+
+/*back to top*/
+.t-top {
+  background-color: #000000;
+  color: #FFFFFF;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+  z-index: 999;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  text-decoration:none;
+}
+
+a.t-top {
+  font-weight: 1000;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+  padding-left: 2px;
+  padding-top: 14px;
+}
+
+.t-top:hover, .t-top:focus, .t-top:visited {
+  color: #FFFFFF;
+}
+
+.t-top.show {
+  opacity: .7;
+}
+
+.jumpto li a{
+  text-decoration:none;
 }
