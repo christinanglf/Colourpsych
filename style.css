@@ -1,0 +1,162 @@
+body{
+  margin:50px;
+  font-size:18px;
+}
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.3;
+}
+
+.nav{
+  justify-content:center;
+  margin-bottom:30px;
+}
+
+.nav-pills li a{
+  color:black;
+  transition: color .3s;
+}
+
+/*hover*/
+
+.nav li a:hover {
+    animation: 3s multicolor;
+    -webkit-animation: 3s multicolor;
+}
+@keyframes multicolor {
+
+    0%{
+      color: #000;
+    }
+    10% {
+        color: #FF6058;
+    }
+    25% {
+        color: #475D95;
+    }
+    50% {
+        color: #3EAF3F;
+    }
+
+    75% {
+        color:#FF8F50
+    }
+    100% {
+        color: #FFC130;
+    }
+}
+@-webkit-keyframes multicolor {
+
+  0%{
+    color: #000;
+  }
+  10% {
+      color: #FF6058;
+  }
+  25% {
+      color: #475D95;
+  }
+  50% {
+      color: #3EAF3F;
+  }
+
+  75% {
+      color:#FF8F50
+  }
+  100% {
+      color: #FFC130;
+  }
+}
+
+.header{
+  font-family:"poiret one", cursive;
+  padding-top:50px;
+  padding-bottom:60px;
+  padding-left:50px;
+  padding-right:50px;
+  text-align:center;
+}
+
+h1{
+  font-size:100px;
+  background: #FF6058;
+  background: -webkit-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 18%, #3EAF3F 29%, #FF8F50 38%, #FFC130 47%);
+  background: -moz-radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 18%, #3EAF3F 29%, #FF8F50 38%, #FFC130 47%);
+  background: radial-gradient(circle farthest-corner at center center, #FF6058 10%, #475D95 18%, #3EAF3F 29%, #FF8F50 38%, #FFC130 47%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary{
+  padding-left:15%;
+  padding-right:15%;
+  line-height:150%;
+  letter-spacing:1.2px;
+  word-spacing:5px;
+  padding-top:30px;
+  text-align:justify;
+}
+
+.footer{
+  border-top:1px solid black;
+  font-style:italic;
+  font-size:14px;
+  margin-top:20px;
+}
+
+.contentlink{
+  text-decoration:none;
+}
+
+.center{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:10px;
+}
+
+cite{
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+.content{
+  padding-left: 15%;
+  padding-right: 15%;
+  line-height:150%;
+  letter-spacing:1.2px;
+  word-spacing:5px;
+  padding-top:30px;
+  text-align:justify;
+}
+
+table{
+border-collapse:collapse;
+}
+
+td,th{
+  border:1px solid #000000;
+  text-align:center;
+  padding:9px;
+}
+
+/*Active link*/
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link{
+  background-color:#BABCBE;
+  color:white;
+}
+
+.bluelight{
+  color:blue;
+}
+
+.food{
+  color:#FF8F50;
+}
+
+.placebo{
+  color:#FF6058;
+}
