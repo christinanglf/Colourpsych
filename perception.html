@@ -85,7 +85,7 @@
       </ul>
     </div>
 
-  <div class="content">
+  <div id="top" class="content">
 
     <h2>Perception</h2><br>
       <p>Light and color influence how people see their surroundings. Different types of light sources affect interior or external objects by visually changing their surface colors. Specific hues observed under natural sunlight may vary when seen under the light from an incandescent (tungsten) light-bulb: lighter colors may appear to be more orange or "brownish" and darker colors may appear even darker. <sup><a class="cite" href="https://en.wikipedia.org/wiki/Color_psychology#cite_note-shevell-22">[22]</a></sup> Light and the color of an object can affect how one perceives its positioning. If light or shadow, or the color of the object, masks an object's true contour (outline of a figure) it can appear to be shaped differently from reality. <sup><a class="cite" href="https://en.wikipedia.org/wiki/Color_psychology#cite_note-shevell-22">[22]</a></sup> Objects under a uniform light-source will promote better impression of three-dimensional shape. <sup><a class="cite" href="https://en.wikipedia.org/wiki/Color_psychology#cite_note-shevell-22">[22]</a></sup> The color of an object may affect whether or not it seems to be in motion. In particular, the trajectories of objects under a light source whose intensity varies with space are more difficult to determine than identical objects under a uniform light source. This could possibly be interpreted as interference between motion and color perception, both of which are more difficult under variable lighting. <sup><a class="cite" href="https://en.wikipedia.org/wiki/Color_psychology#cite_note-shevell-22">[22]</a></sup> <br> <br>
@@ -104,6 +104,36 @@
     <footer>
     <p>The text content of this site was lovingly borrowed from the <a href="https://en.wikipedia.org/wiki/Color_psychology">Wikipedia article on Colour Psychology</a> on 15 July 2021 under the <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a>. Licensing terms of content from other sources (photos, etc.) is noted along with each respective resource.</p>
     </footer>
+
+    <a href="#top" id="t-top" class="t-top" style="display: inline">TOP</a>
+
+    <script> /*back to top*/
+      var link = document.getElementById("t-top");
+      var amountScrolled = 250;
+
+      window.addEventListener('scroll', function(e) {
+          if ( window.pageYOffset > amountScrolled ) {
+              link.classList.add('show');
+          } else {
+              link.className = 't-top';
+          }
+      });
+    <!-- Scrolls to Top -->
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          var distance = 0 - window.pageYOffset;
+          var increments = distance/(1000/1000);
+          function animateScroll() {
+              window.scrollBy(0, increments);
+              if (window.pageYOffset <= document.body.offsetTop) {
+                  clearInterval(runAnimation);
+              }
+          };
+          // Loop the animation function
+          var runAnimation = setInterval(animateScroll, 1000);
+      });
+    </script>
     </div>
 
   </body>
